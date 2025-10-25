@@ -30,13 +30,24 @@ export default function OpenF1Drivers() {
             <h2 className="text-xl font-bold mb-4">
                 Drivers
             </h2>
-            <ul>
+            <div className="grid md:grid-cols-3 gap-4">
                 {drivers.map(driver => (
-                    <li key={driver.driver_number}>
-                        #{driver.driver_number} - {driver.full_name} ({driver.team_name})
-                    </li>
+                    <div key={driver.driver_number} className="rounded-2xl bg-gray-50 border shadow">
+                        {driver.headshot_url ? (
+                            <img
+                                className="w-20 h-20 mx-auto rounded-full object-cover mb-3 border border-gray-200"
+                                src={driver.headshot_url}
+                                alt={driver.full_name}
+                            />
+
+                        ) : (
+                            <div className={"w-20 h-20 mx-auto rounded-full bg-gray-200 mb-3"}/>
+                        )}
+                        <h3 className="font-semibold text-lg text-center">{driver.driver_number} {driver.full_name}</h3>
+                        <p className="text-sm text-gray-500"> {driver.team_name}</p>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 };
