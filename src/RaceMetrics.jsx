@@ -1,6 +1,7 @@
 import './App.css'
 import {racingData} from "./data.jsx";
 import{ Line, XAxis, YAxis, Legend, LineChart, Tooltip, ResponsiveContainer} from "recharts";
+import OpenF1Drivers from "./components/OpenF1Drivers.jsx";
 
 function RaceMetrics() {
 
@@ -23,6 +24,7 @@ function RaceMetrics() {
     </LineChart>
   </ResponsiveContainer>
 </div>
+  <OpenF1Drivers/>
 </div>
   );
 }
