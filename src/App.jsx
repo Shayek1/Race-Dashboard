@@ -2,7 +2,7 @@ import './App.css'
 import {racingData} from "./data.jsx";
 import{ Line, XAxis, YAxis, Legend, LineChart, Tooltip, ResponsiveContainer} from "recharts";
 
-function App() {
+function RaceMetrics() {
 
   return (
 <div className="p-8 bg-gray-100 min-h-screen rounded-2xl">
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App
+export default RaceMetrics
