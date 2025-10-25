@@ -15,6 +15,11 @@ function App() {
     <LineChart data={racingData}>
       <XAxis dataKey="lap" label={{value: "lap", position: "insideBottom", offset: -5}} />
       <YAxis label={{value: "Lap Time(s)", angle: -90, position:"insideLeft"}} />
+      <Tooltip/>
+      <Legend/>
+      <Line type="monotone" dataKey="Verstappen" stroke="#3DB7E4"/>
+      <Line type="monotone" dataKey="Hamilton" stroke="#FF8849"/>
+      <Line type="monotone" dataKey="Norris" stroke="#69BE2B"/>
     </LineChart>
   </ResponsiveContainer>
 </div>
