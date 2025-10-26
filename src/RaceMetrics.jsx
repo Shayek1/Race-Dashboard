@@ -1,9 +1,19 @@
 import './App.css'
-import {racingData} from "./data.jsx";
 import{ Line, XAxis, YAxis, Legend, LineChart, Tooltip, ResponsiveContainer} from "recharts";
 import OpenF1Drivers from "./components/OpenF1Drivers.jsx";
+import {fetchRacingData} from "./data.jsx";
+import {useEffect, useState} from "react";
 
 function RaceMetrics() {
+  const [racingData, setRacingData] = useState([]);
+
+  useEffect(() => {
+    async function loadData(){
+      const data = await fetchRacingData();
+      setRacingData(data);
+    }
+    loadData();
+  }, []);
 
   return (
 <div className="p-8 bg-gray-100 min-h-screen rounded-2xl">
