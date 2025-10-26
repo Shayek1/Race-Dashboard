@@ -11,3 +11,5 @@ Note:
 - API integration was initially implemented to fetch live lap data but failed as API often retured "429 too many requests"
 - Therefore added safe fallback to the original mock data being used to make sure the chart renders data
 - However, application is ready to switch to live data once it is available.
+
+![Race Dashboard Screenshot](src/assets/dashboardIMG.png)
