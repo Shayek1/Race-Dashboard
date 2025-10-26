@@ -7,4 +7,7 @@ This projects uses the OpenF1 API (https://openf1.org/) to currently fetch live 
 - Currently displaying the Driver's name, team and number of selected drivers (Hamilton, Norris and Verstappen).
 
 
-Note: current data on lap time is fictional and does not represent the actual lap times of these drivers.
+Note: 
+- API integration was initially implemented to fetch live lap data but failed as API often retured "429 too many requests"
+- Therefore added safe fallback to the original mock data being used to make sure the chart renders data
+- However, application is ready to switch to live data once it is available.
