@@ -3,8 +3,14 @@ import{ Line, XAxis, YAxis, Legend, LineChart, Tooltip, ResponsiveContainer} fro
 import OpenF1Drivers from "./components/OpenF1Drivers.jsx";
 import {fetchRacingData} from "./data.jsx";
 import {useEffect, useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "./store/themeSlice.jsx";
 
 function RaceMetrics() {
+
+  const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme.mode);
+
   const [racingData, setRacingData] = useState([]);
 
   useEffect(() => {
@@ -16,8 +22,19 @@ function RaceMetrics() {
   }, []);
 
   return (
-<div className="p-8 bg-gray-100 min-h-screen rounded-2xl">
+      <div className={`
+  min-h-screen p-8 rounded-2xl
+  ${theme === "light" ? "bg-gray-100 text-black" : "bg-gray-900 text-white"}
+`}>
     <h1 className="text-3xl text-black-600 font-bold mb-6 text-center">F1 Race Metrics</h1>
+  <button
+      onClick={() => dispatch(toggleTheme())}
+      className="px-4 py-2 mb-4 rounded-xl bg-black text-white"
+  >
+    Toggle Theme (Current: {theme})
+  </button>
+
+
 <div className="bg-white rounded-2xl p-6 shadow-md">
   <h2 className="text-xl font-semibold mb-4">
     Lap Time Comparison
