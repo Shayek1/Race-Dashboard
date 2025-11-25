@@ -29,13 +29,13 @@ function RaceMetrics() {
     <h1 className="text-3xl text-black-600 font-bold mb-6 text-center">F1 Race Metrics</h1>
   <button
       onClick={() => dispatch(toggleTheme())}
-      className="px-4 py-2 mb-4 rounded-xl bg-black text-white"
+      className="px-4 py-2 mb-4 rounded-xl border-1 border-white bg-black text-white"
   >
     Toggle Theme (Current: {theme})
   </button>
 
 
-<div className="bg-white rounded-2xl p-6 shadow-md">
+<div className= {`rounded-2xl p-6 shadow-md ${theme === "light" ? "bg-gray-100 text-black" : "bg-gray-200 text-black"}`}>
   <h2 className="text-xl font-semibold mb-4">
     Lap Time Comparison
   </h2>
